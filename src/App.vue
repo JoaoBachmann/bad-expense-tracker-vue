@@ -89,15 +89,15 @@ function clearAll() {
                 <input v-model="category" class="input" placeholder="Categoria" />
 
                 <div class="row">
-                    <button class="small-btn" @click="addExpense">Add</button>
-                    <button class="small-btn" @click="clearAll">Limpar tudo</button>
+                    <button class="small-btn" @click="addExpense">+ Adicionar</button>
+                    <button class="btn" @click="clearAll"> <span class="red">X</span>Limpar tudo</button>
                 </div>
             
             </div>
 
 
 
-            <div class="panel" v-if="false">
+            <div class="panel">
                 <h2>Lista do dia</h2>
                 <table class="table">
                     <thead>
@@ -114,14 +114,14 @@ function clearAll() {
                             <td>{{ item.category }}</td>
                             <td>{{ item.value }}</td>
                             <td>
-                                <button class="small-btn" @click="removeExpense(item.id)">X</button>
+                                <button class="vermei" @click="removeExpense(item.id)">X</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="summary">
-                    Total do dia: {{ total }}
+                    Total do dia: <span class="red">{{ total }}</span>
                 </div>
             </div>
         </div>
