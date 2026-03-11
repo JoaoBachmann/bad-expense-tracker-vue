@@ -56,7 +56,7 @@ function clearAll() {
 <template>
     <header>
         <div class="header">
- 
+
             <h1>Controle de Gastos Rapido</h1>
 
             <div class="menu-trigger" @click="toggleMenu">
@@ -75,54 +75,57 @@ function clearAll() {
             </nav>
         </div>
 
-        </header>
+    </header>
 
 
-        <div class="layout">
-            <div class="panel">
-                    <div class="lado">
+    <div class="layout">
+        <div class="panel">
+            <div class="lado">
                 <h2 class="mais">+</h2>
                 <h2 class="tamanho">Nova despesa</h2>
-                    </div>
-                <input v-model="title" class="input" placeholder="Descricao" />
-                <input v-model="value" class="input" placeholder="Valor" />
-                <input v-model="category" class="input" placeholder="Categoria" />
+            </div>
+            <input v-model="title" class="input" placeholder="Descricao" />
+            <input v-model="value" class="input" placeholder="Valor" />
+            <input v-model="category" class="input" placeholder="Categoria" />
 
-                <div class="row">
-                    <button class="small-btn" @click="addExpense">+ Adicionar</button>
-                    <button class="btn" @click="clearAll"> <span class="red">X</span>Limpar tudo</button>
-                </div>
-            
+            <div class="row">
+                <button class="small-btn" @click="addExpense">+ Adicionar</button>
+                <button class="btn" @click="clearAll"> <span class="red">X</span>Limpar tudo</button>
             </div>
 
+        </div>
 
 
-            <div class="panel">
-                <h2>Lista do dia</h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Descricao</th>
-                            <th>Categoria</th>
-                            <th>Valor</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="item in filtered" :key="item.id">
-                            <td>{{ item.title }}</td>
-                            <td>{{ item.category }}</td>
-                            <td>{{ item.value }}</td>
-                            <td>
-                                <button class="vermei" @click="removeExpense(item.id)">X</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
 
-                <div class="summary">
-                    Total do dia: <span class="red">{{ total }}</span>
-                </div>
+        <div class="panel">
+            <h2>
+                <FontAwesomeIcon icon="fa-solid fa-list" class="fa-lg" />
+                Lista do dia
+            </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Descricao</th>
+                        <th>Categoria</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in filtered" :key="item.id">
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.category }}</td>
+                        <td>{{ item.value }}</td>
+                        <td>
+                            <button class="vermei" @click="removeExpense(item.id)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary">
+                Total do dia: <span class="red">{{ total }}</span>
             </div>
         </div>
+    </div>
 </template>

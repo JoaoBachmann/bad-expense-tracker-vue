@@ -108,6 +108,15 @@ body {
 
 }
 
+.fa-lg{
+background-color: #3d98c2;
+    border-radius: 10%;
+    font-size: 40px;
+    color: #fff;
+    width: 20px;
+    height: 30px;
+}
+
 .red{
   color: #dc3545;
   padding: 0 4px 0 0;
